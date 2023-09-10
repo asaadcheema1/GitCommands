@@ -1,7 +1,6 @@
-
 # Git Commands and SSH Key Setup for Beginners
 
-Welcome to the realm of Git and GitHub! This comprehensive guide will navigate you through creating a GitHub account, setting up SSH keys, and utilizing essential Git commands.
+Welcome to the realm of Git and GitHub! This guide will take you through the creation of a GitHub account, setting up SSH keys, and essential Git commands.
 
 ## 1. Creating a GitHub Account
 
@@ -12,25 +11,51 @@ Welcome to the realm of Git and GitHub! This comprehensive guide will navigate y
 - **Verify** your email address.
 - Create a `ReadMe.md` file by clicking on 'create', naming it, and committing it. You can add a description or other text for demonstration purposes.
 
-🎉 Great! You now have a GitHub account.
+🎉 Voila! You now have a GitHub account.
 
 ## 2. Setting Up SSH Key for GitHub
 
-### Generate SSH Key:
+### Generate SSH Key (RSA):
 1. **Open** your terminal.
-2. Generate a new key with:
+2. Generate a new RSA key with:
    ```bash
-   ssh-keygen -t ed25519 -C "your_email@example.com"
+   ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+   ```
+
+### Configure SSH to Use the Key:
+3. **Start the SSH agent** in the background:
+    ```bash
+    eval "$(ssh-agent -s)"
+    ```
+
+4. **Add your SSH private key** to the `ssh-agent`:
+    ```bash
+    ssh-add ~/.ssh/id_rsa
+    ```
+
+### Modify SSH Config:
+5. **Edit or create the `config` file** in the `~/.ssh` directory:
+    ```bash
+    nano ~/.ssh/config
+    ```
+
+   Add these lines to the file:
+   ```
+   Host *
+     AddKeysToAgent yes
+     UseKeychain yes
+     IdentityFile ~/.ssh/id_rsa
    ```
 
 ### Link SSH Key to GitHub:
-3. **Copy** the SSH public key to your clipboard:
+6. **Copy** the SSH public key to your clipboard:
    ```bash
-   pbcopy < ~/.ssh/id_ed25519.pub
+   pbcopy < ~/.ssh/id_rsa.pub
    ```
-4. **Navigate** to GitHub and open "Settings".
-5. Go to "SSH and GPG keys" > "New SSH key".
-6. **Paste** your key, give it a descriptive title, and click "Add SSH key".
+
+7. **Navigate** to GitHub and open "Settings".
+8. Go to "SSH and GPG keys" > "New SSH key".
+9. **Paste** your key, give it a descriptive title, and click "Add SSH key".
 
 ## 3. Cloning and Managing Your Repository
 
@@ -39,7 +64,7 @@ Welcome to the realm of Git and GitHub! This comprehensive guide will navigate y
    ```bash
    git --version
    ```
-- **Windows**: Download and install Git from [git-scm](https://git-scm.com/downloads). Consult this [Atlassian tutorial](https://www.atlassian.com/git/tutorials/install-git) for guidance.
+- **Windows**: Download and install Git from [git-scm](https://git-scm.com/downloads). For guidance, refer to this [Atlassian tutorial](https://www.atlassian.com/git/tutorials/install-git).
 
 ### Cloning a Repository:
 1. **Go** to your repository on GitHub.
@@ -81,4 +106,4 @@ Welcome to the realm of Git and GitHub! This comprehensive guide will navigate y
 
 ---
 
-🚀 With these foundational steps, you're well on your way to becoming a Git and GitHub expert. Continue exploring, and happy coding!
+With these steps, you're prepared to embark on your Git and GitHub journey. Keep exploring, and happy coding!
