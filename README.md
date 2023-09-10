@@ -11,7 +11,7 @@ Welcome to the realm of Git and GitHub! This guide will take you through the cre
 - **Verify** your email address.
 - Create a `ReadMe.md` file by clicking on 'create', naming it, and committing it. You can add a description or other text for demonstration purposes.
 
-🎉 Voila! You now have a GitHub account.
+🎉 Cool! You now have a GitHub account.
 
 ## 2. Setting Up SSH Key for GitHub
 
