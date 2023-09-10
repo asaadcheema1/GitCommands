@@ -2,11 +2,11 @@ Certainly! I'll integrate all the sections into a single cohesive guide, which y
 
 ---
 
-# Git Commands for Beginners 🚀
+# Git Commands for Beginners 
 
 Welcome to the world of Git and GitHub! This guide will walk you through the basics of creating a GitHub account and using essential Git commands.
 
-## 1. Creating a GitHub Account 🌐
+## 1. Creating a GitHub Account 
 
 - **Navigate** to [GitHub's homepage](https://github.com/).
 - On the **top right corner**, click on "Sign in/Sign up."
